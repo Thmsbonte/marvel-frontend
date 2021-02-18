@@ -1,0 +1,17 @@
+@import "../../Variables.scss";
+
+.characters {
+  .characters-content {
+    display: flex;
+    flex-wrap: wrap;
+    .character-card {
+      height: 300px;
+      width: calc((#{$windowsWidth} / 5) - (12px * 4 / 5));
+      margin-top: 10px;
+      margin-right: 12px;
+      &:nth-child(5n) {
+        margin-right: 0px;
+      }
+    }
+  }
+}

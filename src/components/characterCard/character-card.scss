@@ -1,0 +1,48 @@
+@import "../../Variables.scss";
+
+.character-card {
+  .character-card-content {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    cursor: pointer;
+    img {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      z-index: -1;
+      border-radius: 5px;
+    }
+    .character-card-information {
+      background-color: rgba(0, 0, 0, 0);
+      color: rgba(255, 255, 255, 0);
+      padding: 10px;
+      h2 {
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 14px;
+        font-weight: 300;
+        text-align: justify;
+      }
+    }
+    &:hover {
+      .character-card-information {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 10px;
+        h2 {
+          margin-bottom: 10px;
+        }
+        p {
+          font-size: 14px;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}

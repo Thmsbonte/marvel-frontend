@@ -1,0 +1,47 @@
+.comic-card {
+  height: 100%;
+  width: 100%;
+  .comic-card-content {
+    height: 100%;
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    width: 100%;
+    img {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      z-index: -1;
+      border-radius: 5px;
+    }
+    .comic-card-information {
+      background-color: rgba(0, 0, 0, 0);
+      color: rgba(255, 255, 255, 0);
+      padding: 10px;
+      h2 {
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 14px;
+        font-weight: 300;
+        text-align: justify;
+      }
+    }
+    &:hover {
+      .comic-card-information {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 10px;
+        flex: 1;
+        h2 {
+          margin-bottom: 10px;
+        }
+        p {
+          font-size: 14px;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
