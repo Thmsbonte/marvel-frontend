@@ -1,0 +1,40 @@
+@import "../../Variables.scss";
+
+.comics {
+  .comics-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    h1 {
+      margin-top: 20px;
+      font-size: 32px;
+      flex: 1;
+    }
+    .comics-pagging-limit {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  .comics-content {
+    display: flex;
+    flex-wrap: wrap;
+    .comic-card {
+      height: 300px;
+      width: calc((#{$windowsWidth} / 5) - (12px * 4 / 5));
+      margin-top: 10px;
+      margin-right: 12px;
+      &:nth-child(5n) {
+        margin-right: 0px;
+      }
+    }
+  }
+
+  .comics-paging {
+    flex: 1;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

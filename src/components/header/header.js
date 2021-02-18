@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import MarvelLogo from "../../assets/img/marvel-logo-4.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const handleOnChange = () => {};
+const Header = ({ search, setSearch }) => {
+  const handleSearchChange = (event) => {
+    setSearch(event.target.value);
+  };
 
-const Header = () => {
   return (
     <div className="header">
       <div className="container">
@@ -21,7 +23,8 @@ const Header = () => {
                 </i>
                 <input
                   type="text"
-                  onChange={handleOnChange}
+                  value={search}
+                  onChange={handleSearchChange}
                   placeholder="Rechercher"
                 />
               </form>

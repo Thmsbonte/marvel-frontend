@@ -13,7 +13,7 @@ const CommicCard = ({ comicData }) => {
           alt="marvel-comic"
         />
         <div className="comic-card-information">
-          <h2>{comicData.name}</h2>
+          <h2>{comicData.title}</h2>
           <p>{comicData.description}</p>
         </div>
       </Link>

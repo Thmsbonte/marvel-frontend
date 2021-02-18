@@ -1,0 +1,15 @@
+.pagging {
+  display: flex;
+  .pagging-left,
+  .pagging-right {
+    display: flex;
+    i {
+      margin-right: 10px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+}
