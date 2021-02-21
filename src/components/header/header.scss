@@ -56,11 +56,22 @@
     .header-right {
       display: flex;
       align-items: center;
+      button {
+        margin-left: 30px;
+        cursor: pointer;
+        background-color: #ec1c23;
+        border: none;
+        color: white;
+        height: 35px;
+        width: 130px;
+        border-radius: 1px;
+        font-size: 14px;
+      }
       .header-menu {
         nav {
           a {
             color: white;
-            margin-right: 50px;
+            margin-right: 20px;
             cursor: pointer;
             &:hover {
               text-decoration: underline;
