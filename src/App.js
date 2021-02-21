@@ -19,13 +19,14 @@ import Footer from "./components/footer/footer";
 library.add(faSearch, faArrowLeft, faArrowRight, faStar, faTimes);
 
 const App = () => {
+  // State initialization
   const [search, setSearch] = useState("");
   const [userInfo, setUserInfo] = useState({
     token: "",
     user_id: "",
   });
 
-  // Function : creation of user's cookies
+  // Function : create/delete user's cookies
   const setUser = (token, user_id) => {
     if (token) {
       Cookies.set("userToken", token);
@@ -38,9 +39,9 @@ const App = () => {
     }
   };
 
-  // At the opening of the App, and only once :
+  // At the opening of the App, if a user token exist, update user's state information
   useEffect(() => {
-    Cookies.get("userToken") && // If a user token exist, update user's state information
+    Cookies.get("userToken") &&
       setUserInfo({
         token: Cookies.get("userToken"),
         user_id: Cookies.get("user_id"),

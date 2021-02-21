@@ -7,12 +7,14 @@ import ComicCard from "../../components/comicCard/comicCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Character = () => {
+  // States initialization
   const [isLoading, setIsLoading] = useState(true);
   const [comicsRelated, setComicsRelated] = useState([]);
   const [countComicsRelated, setCountComicsRelated] = useState(0);
-  const { character_id } = useParams();
-  console.log(character_id);
 
+  const { character_id } = useParams();
+
+  // Function : get comics related to a specific character
   const fetchData = async () => {
     try {
       const response = await axios.get(
@@ -26,6 +28,7 @@ const Character = () => {
     }
   };
 
+  // At the opening of the page, one data request
   useEffect(() => {
     fetchData();
   }, []);

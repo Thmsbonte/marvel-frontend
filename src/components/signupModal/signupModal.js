@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Cookies from "js-cookie";
 
 const SignupModal = ({ setUser, modal, setModal }) => {
-  // States and useHistory initialization
+  // States initialization
   const [loadingMessage, setLoadingMessage] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [credentials, setCredentials] = useState({

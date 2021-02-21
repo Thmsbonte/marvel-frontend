@@ -28,6 +28,9 @@
       background-color: rgba(0, 0, 0, 0);
       color: rgba(255, 255, 255, 0);
       padding: 10px;
+      &::-webkit-scrollbar {
+        display: none;
+      }
       .character-card-favorite-hover {
         display: none;
         justify-content: flex-end;

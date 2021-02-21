@@ -3,6 +3,7 @@ import CharacterCard from "../../components/characterCard/characterCard";
 import ComicCard from "../../components/comicCard/comicCard";
 
 const Favorites = ({ search }) => {
+  // Get data stored in local storage
   const favCharacters =
     JSON.parse(window.localStorage.getItem("favCharacters")) || [];
   const favComics = JSON.parse(window.localStorage.getItem("favComics")) || [];

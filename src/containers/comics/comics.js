@@ -7,12 +7,14 @@ import Pagging from "../../components/pagging/pagging";
 import PaggingLimit from "../../components/paggingLimit/paggingLimit";
 
 const Comics = ({ search }) => {
+  // States initialization
   const [comicsData, setComicsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [limit, setLimit] = useState("10");
   const [skip, setSkip] = useState("0");
   const pagging = Number(skip) + Number(limit);
 
+  // Function : get comics data according to filters
   const fetchData = async (search, skip, limit) => {
     let url = "https://thmsbonte-marvel-backend.herokuapp.com/comics?";
     if (search) {
@@ -26,13 +28,14 @@ const Comics = ({ search }) => {
     }
     try {
       const response = await axios.get(url);
-      setComicsData(response.data.results);
+      setComicsData(response.data.results); // Save comics data in a state
       setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
 
+  // Each time the search, skip or limit state change, new data request
   useEffect(() => {
     fetchData(search, skip, limit);
   }, [search, skip, limit]);

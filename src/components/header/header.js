@@ -8,13 +8,13 @@ import SignupModal from "../signupModal/signupModal";
 import Cookies from "js-cookie";
 
 const Header = ({ search, setSearch, userInfo, setUser }) => {
-  //When opening the page we display the login page
+  //When opening the page, display of the login page
   const [modal, setModal] = useState({
     loginModal: true,
     signupModal: false,
   });
 
-  // If user is known we hide login modal
+  // If user is known, hide login modal
   useEffect(() => {
     if (Cookies.get("userToken")) {
       const newModal = { ...modal };
@@ -24,10 +24,6 @@ const Header = ({ search, setSearch, userInfo, setUser }) => {
   }, []);
 
   const history = useHistory();
-
-  const handleSearchChange = (event) => {
-    setSearch(event.target.value);
-  };
 
   return (
     <>
@@ -53,7 +49,7 @@ const Header = ({ search, setSearch, userInfo, setUser }) => {
                   <input
                     type="text"
                     value={search}
-                    onChange={handleSearchChange}
+                    onChange={(event) => setSearch(event.target.value)}
                     placeholder="Rechercher"
                   />
                 </form>
@@ -67,7 +63,7 @@ const Header = ({ search, setSearch, userInfo, setUser }) => {
                   <Link to="/favorites">FAVORITES</Link>
                 </nav>
               </div>
-              {/* If user connected display of a logout button */}
+              {/* If user is connected display of a logout button */}
               {userInfo.token ? (
                 <button
                   className="Button-logout"
@@ -82,7 +78,7 @@ const Header = ({ search, setSearch, userInfo, setUser }) => {
                   Se déconnecter
                 </button>
               ) : (
-                // If user not connected diplay of the login button
+                // If user is not connected diplay of the login button
                 <button
                   onClick={() => {
                     const newModal = { ...modal };

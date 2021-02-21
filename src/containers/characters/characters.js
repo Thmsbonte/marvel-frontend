@@ -7,12 +7,14 @@ import Pagging from "../../components/pagging/pagging";
 import PaggingLimit from "../../components/paggingLimit/paggingLimit";
 
 const Characters = ({ search }) => {
+  // States initialization
   const [charactersData, setCharactersData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [limit, setLimit] = useState("10");
   const [skip, setSkip] = useState("0");
   const pagging = Number(skip) + Number(limit);
 
+  // Function : get characters data according to filters
   const fetchData = async (search, skip, limit) => {
     let url = "https://thmsbonte-marvel-backend.herokuapp.com/characters?";
     if (search) {
@@ -26,13 +28,14 @@ const Characters = ({ search }) => {
     }
     try {
       const response = await axios.get(url);
-      setCharactersData(response.data.results);
+      setCharactersData(response.data.results); // Save characters data in a state
       setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
 
+  // Each time search, skip or limit state change, new data request
   useEffect(() => {
     fetchData(search, skip, limit);
   }, [search, skip, limit]);

@@ -1,3 +1,5 @@
+import "./isLoading.scss";
+
 const IsLoading = () => {
   return (
     <div className="is-loading">

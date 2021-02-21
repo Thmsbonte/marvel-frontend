@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Cookies from "js-cookie";
 
 const LoginModal = ({ setUser, modal, setModal }) => {
-  // States and useHistory initialization
+  // States initialization
   const [errorMessage, setErrorMessage] = useState("");
   const [loadingMessage, setLoadingMessage] = useState(false);
   const [credentials, setCredentials] = useState({
@@ -35,7 +35,6 @@ const LoginModal = ({ setUser, modal, setModal }) => {
       setUser(response.data.token, response.data._id); // Save user token and username information
       setLoadingMessage(false);
       setModal(false);
-      // If the user comes from the "sell article" button, we redirect him to the publish page
     } catch (error) {
       setLoadingMessage(false);
       setErrorMessage(error.response.data.message); // Set an "error message" to display to the user

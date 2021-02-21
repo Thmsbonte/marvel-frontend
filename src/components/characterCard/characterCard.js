@@ -7,16 +7,19 @@ const CharacterCard = ({ characterData }) => {
   const localStorage = window.localStorage;
   const [isFavorite, setIsFavorite] = useState(false);
 
+  // Function : tag/untag character as favorite and save/delete its data from "Favorites" local storage
   const handleFavorite = () => {
     const favorites = JSON.parse(localStorage.getItem("favCharacters")) || [];
     const index = favorites.findIndex((elem) => {
+      // If character's data already exists, we get its array index
       return elem._id === characterData._id;
     });
-    index === -1 ? favorites.push(characterData) : favorites.splice(index, 1);
+    index === -1 ? favorites.push(characterData) : favorites.splice(index, 1); // According to index, we add or delete character's data from local storage
     localStorage.setItem("favCharacters", JSON.stringify(favorites));
-    setIsFavorite(!isFavorite);
+    setIsFavorite(!isFavorite); // In any case we update its "favorite" state
   };
 
+  // When opening component, update of its "favorite" state according to local storage
   useEffect(() => {
     const favorites = JSON.parse(localStorage.getItem("favCharacters")) || [];
     favorites.findIndex((elem) => {
@@ -27,14 +30,14 @@ const CharacterCard = ({ characterData }) => {
   return (
     <div className="character-card">
       <Link
-        to={{ pathname: `/character/${characterData._id}` }}
+        to={{ pathname: `/character/${characterData._id}` }} // Whole character-card redirect to character's page chen clicked
         className="character-card-content"
       >
         <img
           src={`${characterData.thumbnail.path}.${characterData.thumbnail.extension}`}
           alt="marvel-character"
         />
-        {isFavorite && (
+        {isFavorite && ( // If tag as favorite, display of a yellow star which does not redirect to character's page when clicked
           <Link
             to="#"
             className="character-card-favorite"
