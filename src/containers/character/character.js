@@ -16,7 +16,7 @@ const Character = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `https://thmsbonte-marvel-backend.herokuapp.com/${character_id}`
+        `https://thmsbonte-marvel-backend.herokuapp.com/comics/${character_id}`
       );
       setComicsRelated(response.data);
       setIsLoading(false);
