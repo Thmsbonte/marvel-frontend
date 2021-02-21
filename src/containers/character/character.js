@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import IsLoading from "../../components/isLoading/isLoading";
-import CommicCard from "../../components/comicCard/comicCard";
+import ComicCard from "../../components/comicCard/comicCard";
 
 const Character = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -45,7 +45,7 @@ const Character = () => {
               {comicsRelated.comics.map((item) => {
                 return (
                   <div className="character-comic" key={item._id}>
-                    <CommicCard comicData={item} />
+                    <ComicCard comicData={item} />
                   </div>
                 );
               })}

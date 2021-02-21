@@ -9,9 +9,11 @@ import {
   faSearch,
   faArrowLeft,
   faArrowRight,
+  faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-library.add(faSearch, faArrowLeft, faArrowRight);
+import Favorites from "./containers/favorites/favorites";
+library.add(faSearch, faArrowLeft, faArrowRight, faStar);
 
 const App = () => {
   const [search, setSearch] = useState("");
@@ -21,6 +23,9 @@ const App = () => {
       <Switch>
         <Route path="/comics">
           <Comics search={search} />
+        </Route>
+        <Route path="/favorites">
+          <Favorites search={search} />
         </Route>
         <Route path="/character/:character_id">
           <Character />

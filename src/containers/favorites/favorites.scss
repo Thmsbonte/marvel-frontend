@@ -1,0 +1,29 @@
+@import "../../Variables.scss";
+
+.favorites {
+  h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 26px;
+  }
+  .favorites-content {
+    display: flex;
+    margin-top: 20px;
+    // flex-wrap: nowrap;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .character-card {
+      height: 300px;
+      width: calc((#{$windowsWidth} / 5) - (12px * 4 / 5));
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+    .comic-card {
+      height: 300px;
+      width: calc((#{$windowsWidth} / 5) - (12px * 4 / 5));
+      margin-right: 12px;
+    }
+  }
+}
