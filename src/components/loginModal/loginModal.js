@@ -29,7 +29,7 @@ const LoginModal = ({ setUser, modal, setModal }) => {
 
     try {
       const response = await axios.post(
-        "https://https://thmsbonte-marvel-backend.herokuapp.com/user/login",
+        "https://thmsbonte-marvel-backend.herokuapp.com/user/login",
         credentials
       );
       setUser(response.data.token, response.data._id); // Save user token and username information
