@@ -1,13 +1,12 @@
 import "../loginModal/loginModal.scss";
 import { useState } from "react";
 import axios from "axios";
-import { useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Cookies from "js-cookie";
 
 const SignupModal = ({ setUser, modal, setModal }) => {
   // States and useHistory initialization
-  const history = useHistory();
   const [loadingMessage, setLoadingMessage] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [credentials, setCredentials] = useState({

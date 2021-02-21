@@ -3,27 +3,34 @@
 .favorites {
   h2 {
     margin-top: 20px;
-    margin-bottom: 20px;
     font-size: 26px;
+    margin-bottom: 5px;
+  }
+  a {
+    color: white;
+    font-weight: 300;
   }
   .favorites-content {
     display: flex;
     margin-top: 20px;
-    // flex-wrap: nowrap;
-    overflow-x: scroll;
-    &::-webkit-scrollbar {
-      display: none;
-    }
+    flex-wrap: wrap;
     .character-card {
       height: 300px;
+      margin-top: 15px;
       width: calc((#{$windowsWidth} / 5) - (12px * 4 / 5));
       margin-right: 12px;
-      flex-shrink: 0;
+      &:nth-child(5n) {
+        margin-right: 0px;
+      }
     }
     .comic-card {
       height: 300px;
+      margin-top: 15px;
       width: calc((#{$windowsWidth} / 5) - (12px * 4 / 5));
       margin-right: 12px;
+      &:nth-child(5n) {
+        margin-right: 0px;
+      }
     }
   }
 }

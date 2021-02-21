@@ -21,18 +21,33 @@
     flex-direction: column;
     justify-content: center;
     margin-top: 30px;
-    .character-comics {
+    .character-comics-content {
       display: flex;
-      flex-wrap: nowrap;
-      overflow-x: scroll;
-      &::-webkit-scrollbar {
-        display: none;
+      align-items: center;
+      i {
+        border: solid 1px white;
+        border-radius: 50%;
+        padding: 0 2px;
       }
-      .character-comic {
-        height: 300px;
-        width: calc((100% / 3) - (12px * 2 / 3));
-        flex-shrink: 0;
-        margin-right: 12px;
+      .arrow-left {
+        margin-right: -15px;
+      }
+      .arrow-right {
+        margin-left: -15px;
+      }
+      .character-comics {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        .character-comic {
+          height: 300px;
+          width: calc((100% / 3) - (12px * 2 / 3));
+          flex-shrink: 0;
+          margin-right: 12px;
+        }
       }
     }
     .character-details {

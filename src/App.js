@@ -15,6 +15,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
 import Favorites from "./containers/favorites/favorites";
+import Footer from "./components/footer/footer";
 library.add(faSearch, faArrowLeft, faArrowRight, faStar, faTimes);
 
 const App = () => {
@@ -59,7 +60,7 @@ const App = () => {
           <Comics search={search} />
         </Route>
         <Route path="/favorites">
-          <Favorites search={search} />
+          <Favorites search={search} setSearch={setSearch} />
         </Route>
         <Route path="/character/:character_id">
           <Character />
@@ -68,6 +69,7 @@ const App = () => {
           <Characters search={search} />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 };

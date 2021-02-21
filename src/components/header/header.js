@@ -2,15 +2,26 @@ import "./header.scss";
 import { Link, useHistory } from "react-router-dom";
 import MarvelLogo from "../../assets/img/marvel-logo-4.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import LoginModal from "../loginModal/loginModal";
 import SignupModal from "../signupModal/signupModal";
+import Cookies from "js-cookie";
 
 const Header = ({ search, setSearch, userInfo, setUser }) => {
+  //When opening the page we display the login page
   const [modal, setModal] = useState({
     loginModal: true,
     signupModal: false,
   });
+
+  // If user is known we hide login modal
+  useEffect(() => {
+    if (Cookies.get("userToken")) {
+      const newModal = { ...modal };
+      newModal.loginModal = false;
+      setModal(newModal);
+    }
+  }, []);
 
   const history = useHistory();
 

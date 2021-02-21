@@ -1,0 +1,17 @@
+.footer {
+  height: 150px;
+  border-top: solid 1px rgb(209, 201, 201);
+  margin-top: 50px;
+  .footer-content {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+      font-weight: 300;
+      strong {
+        font-weight: 400;
+      }
+    }
+  }
+}

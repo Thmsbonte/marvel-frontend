@@ -12,6 +12,7 @@ const Favorites = ({ search }) => {
   return (
     <div className="favorites container">
       <h2>FAVORITES CHARACTERS</h2>
+      <a href="#favorites-comics">Go to favorites comics</a>
       <div className="favorites-content">
         {favCharacters.map((item) => {
           return (
@@ -21,7 +22,7 @@ const Favorites = ({ search }) => {
           );
         })}
       </div>
-      <h2>FAVORITES COMICS</h2>
+      <h2 id="favorites-comics">FAVORITES COMICS</h2>
       <div className="favorites-content">
         {favComics.map((item) => {
           return (
