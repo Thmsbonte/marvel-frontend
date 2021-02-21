@@ -14,7 +14,8 @@ const Characters = ({ search }) => {
   const pagging = Number(skip) + Number(limit);
 
   const fetchData = async (search, skip, limit) => {
-    let url = "http://localhost:3001/characters?";
+    let url =
+      "https://https://thmsbonte-marvel-backend.herokuapp.com/characters?";
     if (search) {
       url += `name=${search}&`;
     }
