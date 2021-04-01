@@ -25,20 +25,17 @@ const ComicCard = ({ comicData }) => {
     favorites.findIndex((elem) => {
       return elem._id === comicData._id;
     }) !== -1 && setIsFavorite(true);
-  }, []);
+  }, [localStorage, comicData._id]);
 
   return (
     <div className="comic-card">
-      <Link
-        to={{ pathname: "/comics", data: { comicData } }} // Whole comic-card redirect to comics' page chen clicked
-        className="comic-card-content"
-      >
+      <div className="comic-card-content">
         <img
           src={`${comicData.thumbnail.path}.${comicData.thumbnail.extension}`}
           alt="marvel-comic"
         />
         {isFavorite && ( // If tag as favorite, display of a yellow star which does not redirect to comics' page when clicked
-          <Link
+          <div
             to="#"
             className="comic-card-favorite"
             onClick={handleFavorite}
@@ -47,7 +44,7 @@ const ComicCard = ({ comicData }) => {
             }
           >
             <FontAwesomeIcon icon="star" size="2x" />
-          </Link>
+          </div>
         )}
         <div className="comic-card-information">
           <Link
@@ -61,11 +58,19 @@ const ComicCard = ({ comicData }) => {
             <FontAwesomeIcon icon="star" size="2x" />
           </Link>
           <div className="comic-card-details">
-            <h2>{comicData.title}</h2>
-            <p>{comicData.description}</p>
+            <h2
+              dangerouslySetInnerHTML={{
+                __html: comicData.title,
+              }}
+            ></h2>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: comicData.description,
+              }}
+            ></p>
           </div>
         </div>
-      </Link>
+      </div>
     </div>
   );
 };

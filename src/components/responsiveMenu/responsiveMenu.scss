@@ -1,0 +1,18 @@
+.header-menu-xs {
+  margin-top: 15px;
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    background-color: #464545;
+    margin-bottom: 10px;
+    font-size: 22px;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

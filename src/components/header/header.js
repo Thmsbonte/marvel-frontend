@@ -7,7 +7,14 @@ import LoginModal from "../loginModal/loginModal";
 import SignupModal from "../signupModal/signupModal";
 import Cookies from "js-cookie";
 
-const Header = ({ search, setSearch, userInfo, setUser }) => {
+const Header = ({
+  search,
+  setSearch,
+  userInfo,
+  setUser,
+  responsiveMenu,
+  setResponsiveMenu,
+}) => {
   //When opening the page, display of the login page
   const [modal, setModal] = useState({
     loginModal: true,
@@ -21,9 +28,17 @@ const Header = ({ search, setSearch, userInfo, setUser }) => {
       newModal.loginModal = false;
       setModal(newModal);
     }
+    // eslint-disable-next-line
   }, []);
 
   const history = useHistory();
+
+  // Function : update login modal state to display or not the modal
+  const updateModal = () => {
+    const newModal = { ...modal };
+    newModal.loginModal = !modal.loginModal;
+    setModal(newModal);
+  };
 
   return (
     <>
@@ -41,7 +56,7 @@ const Header = ({ search, setSearch, userInfo, setUser }) => {
               <Link to="/" className="header-logo">
                 <img src={MarvelLogo} alt="marvel-logo" />
               </Link>
-              <div className="header-search-bar">
+              <div className="header-search-bar hidden-xs">
                 <form>
                   <i>
                     <FontAwesomeIcon icon="search" size="2x" />
@@ -55,6 +70,7 @@ const Header = ({ search, setSearch, userInfo, setUser }) => {
                 </form>
               </div>
             </div>
+            {/* Responsive : div hidden when small device */}
             <div className="header-right">
               <div className="header-menu">
                 <nav>
@@ -69,9 +85,7 @@ const Header = ({ search, setSearch, userInfo, setUser }) => {
                   className="Button-logout"
                   onClick={() => {
                     setUser(null);
-                    const newModal = { ...modal };
-                    newModal.loginModal = !modal.loginModal;
-                    setModal(newModal);
+                    updateModal();
                     history.push("/");
                   }}
                 >
@@ -79,19 +93,56 @@ const Header = ({ search, setSearch, userInfo, setUser }) => {
                 </button>
               ) : (
                 // If user is not connected diplay of the login button
+                <button onClick={() => updateModal()} className="Button-login">
+                  Se connecter
+                </button>
+              )}
+              {/* Responsive : display menu icon */}
+              <div
+                className="visible-xs menu-icon"
+                onClick={() => {
+                  setResponsiveMenu(!responsiveMenu);
+                }}
+              >
+                <FontAwesomeIcon icon="bars" size="2x" />
+              </div>
+            </div>
+          </div>
+          <div className="header-search-bar visible-xxs">
+            <form>
+              <i>
+                <FontAwesomeIcon icon="search" size="2x" />
+              </i>
+              <input
+                type="text"
+                value={search}
+                onChange={(event) => setSearch(event.target.value)}
+                placeholder="Rechercher"
+              />
+            </form>
+          </div>
+          {responsiveMenu && (
+            <div className="login-button-xxs">
+              {userInfo.token ? (
                 <button
+                  className="Button-logout"
                   onClick={() => {
-                    const newModal = { ...modal };
-                    newModal.loginModal = !modal.loginModal;
-                    setModal(newModal);
+                    setUser(null);
+                    setResponsiveMenu(!responsiveMenu);
+                    updateModal();
+                    history.push("/");
                   }}
-                  className="Button-login"
                 >
+                  Se déconnecter
+                </button>
+              ) : (
+                // If user is not connected diplay of the login button
+                <button onClick={() => updateModal()} className="Button-login">
                   Se connecter
                 </button>
               )}
             </div>
-          </div>
+          )}
         </div>
       </div>
     </>

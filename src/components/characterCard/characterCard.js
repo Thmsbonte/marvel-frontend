@@ -25,7 +25,7 @@ const CharacterCard = ({ characterData }) => {
     favorites.findIndex((elem) => {
       return elem._id === characterData._id;
     }) !== -1 && setIsFavorite(true);
-  }, []);
+  }, [characterData._id, localStorage]);
 
   return (
     <div className="character-card">
@@ -59,8 +59,16 @@ const CharacterCard = ({ characterData }) => {
             <FontAwesomeIcon icon="star" size="2x" />
           </Link>
           <div className="character-card-details">
-            <h2>{characterData.name}</h2>
-            <p>{characterData.description}</p>
+            <h2
+              dangerouslySetInnerHTML={{
+                __html: characterData.name,
+              }}
+            ></h2>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: characterData.description,
+              }}
+            ></p>
           </div>
         </div>
       </Link>

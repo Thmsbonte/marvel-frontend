@@ -12,11 +12,12 @@ import {
   faArrowRight,
   faStar,
   faTimes,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
 import Favorites from "./containers/favorites/favorites";
 import Footer from "./components/footer/footer";
-library.add(faSearch, faArrowLeft, faArrowRight, faStar, faTimes);
+library.add(faSearch, faArrowLeft, faArrowRight, faStar, faTimes, faBars);
 
 const App = () => {
   // State initialization
@@ -25,6 +26,7 @@ const App = () => {
     token: "",
     user_id: "",
   });
+  const [responsiveMenu, setResponsiveMenu] = useState(false);
 
   // Function : create/delete user's cookies
   const setUser = (token, user_id) => {
@@ -55,19 +57,39 @@ const App = () => {
         setSearch={setSearch}
         userInfo={userInfo}
         setUser={setUser}
+        responsiveMenu={responsiveMenu}
+        setResponsiveMenu={setResponsiveMenu}
       />
       <Switch>
         <Route path="/comics">
-          <Comics search={search} />
+          <Comics
+            search={search}
+            responsiveMenu={responsiveMenu}
+            setResponsiveMenu={setResponsiveMenu}
+          />
         </Route>
         <Route path="/favorites">
-          <Favorites search={search} setSearch={setSearch} />
+          <Favorites
+            search={search}
+            setSearch={setSearch}
+            responsiveMenu={responsiveMenu}
+            setResponsiveMenu={setResponsiveMenu}
+          />
         </Route>
         <Route path="/character/:character_id">
-          <Character />
+          <Character
+            search={search}
+            setSearch={setSearch}
+            responsiveMenu={responsiveMenu}
+            setResponsiveMenu={setResponsiveMenu}
+          />
         </Route>
         <Route path="/">
-          <Characters search={search} />
+          <Characters
+            search={search}
+            responsiveMenu={responsiveMenu}
+            setResponsiveMenu={setResponsiveMenu}
+          />
         </Route>
       </Switch>
       <Footer />

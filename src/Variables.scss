@@ -1,3 +1,25 @@
 // Variables
+$mobile: 360px;
+$smallWindow: 576px;
+$mediumWindow: 768px;
+$largeWindow: 992px;
 $windowsWidth: 1200px;
-$test : 200px;
+
+// /* Small devices (landscape phones, 576px and up) */
+// @media screen and (min-width: 576px) {
+//   $windowsWidth: 576px;
+// }
+
+// /* Medium devices (tablets, 768px and up) */
+// @media screen and (min-width: 768px) {
+//   $windowsWidth: 768px;
+// }
+
+// /* Large devices (desktops, 992px and up) */
+// @media screen and (min-width: 992px) {
+//   $windowsWidth: 992px;
+// }
+// /* Extra large devices (large desktops, 1200px and up) */
+// @media screen and (min-width: 1200px) {
+//   $windowsWidth: 1200px;
+// }

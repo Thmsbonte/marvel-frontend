@@ -5,8 +5,9 @@ import ComicCard from "../../components/comicCard/comicCard";
 import IsLoading from "../../components/isLoading/isLoading";
 import Pagging from "../../components/pagging/pagging";
 import PaggingLimit from "../../components/paggingLimit/paggingLimit";
+import ResponsiveMenu from "../../components/responsiveMenu/responsiveMenu";
 
-const Comics = ({ search }) => {
+const Comics = ({ search, responsiveMenu, setResponsiveMenu }) => {
   // States initialization
   const [comicsData, setComicsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -40,7 +41,7 @@ const Comics = ({ search }) => {
     fetchData(search, skip, limit);
   }, [search, skip, limit]);
 
-  return (
+  return !responsiveMenu ? (
     <div className="comics">
       <div className="container">
         <div className="comics-hero">
@@ -82,6 +83,11 @@ const Comics = ({ search }) => {
         </div>
       </div>
     </div>
+  ) : (
+    <ResponsiveMenu
+      responsiveMenu={responsiveMenu}
+      setResponsiveMenu={setResponsiveMenu}
+    />
   );
 };
 
