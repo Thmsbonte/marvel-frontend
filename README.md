@@ -12,7 +12,7 @@ Website allowing to search in all Marvel characters and comics related. Develope
 
 ### Main features
 - **Login** and **Signup**
-- **Search** with filters
+- **Search**
 - **Save** favorite
 - **Responsive**
 
