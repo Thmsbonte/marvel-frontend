@@ -28,6 +28,7 @@ const Favorites = ({
                 <CharacterCard
                   characterData={item}
                   className="character-card"
+                  setSearch={setSearch}
                 />
               )
             );

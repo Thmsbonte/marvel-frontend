@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useEffect } from "react";
 
-const CharacterCard = ({ characterData }) => {
+const CharacterCard = ({ characterData, setSearch }) => {
   const localStorage = window.localStorage;
   const [isFavorite, setIsFavorite] = useState(false);
 

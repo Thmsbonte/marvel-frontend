@@ -106,6 +106,7 @@ const Header = ({
                   className="Button-logout"
                   onClick={() => {
                     setUser(null);
+                    setSearch("");
                     updateModal();
                     history.push("/");
                   }}
@@ -149,6 +150,7 @@ const Header = ({
                   className="Button-logout"
                   onClick={() => {
                     setUser(null);
+                    setSearch("");
                     setResponsiveMenu(!responsiveMenu);
                     updateModal();
                     history.push("/");

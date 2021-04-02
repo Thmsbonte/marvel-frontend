@@ -5,6 +5,9 @@ body {
   font-family: "Roboto Condensed", sans-serif;
   background-color: #202020;
   color: white;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .container {

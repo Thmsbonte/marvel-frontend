@@ -23,6 +23,8 @@ const Character = ({
 
   // At the opening of the page, one data request
   useEffect(() => {
+    // Search reset
+    setSearch("");
     // Function : get comics related to a specific character
     const fetchData = async () => {
       try {
@@ -38,6 +40,7 @@ const Character = ({
     };
 
     fetchData();
+    // eslint-disable-next-line
   }, [character_id]);
 
   return !responsiveMenu ? (

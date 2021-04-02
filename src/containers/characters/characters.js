@@ -70,7 +70,7 @@ const Characters = ({
             {charactersData.map((item) => {
               return (
                 <div className="character-card" key={item._id}>
-                  <CharacterCard characterData={item} />
+                  <CharacterCard characterData={item} setSearch={setSearch} />
                 </div>
               );
             })}
