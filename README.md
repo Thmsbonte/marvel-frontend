@@ -8,7 +8,7 @@
 
 ## Overview
 
-Website listing all Marvel characters and comics related. Developed with Javascript - React.
+Website allowing to search in all Marvel characters and comics related. Developed with Javascript - React.
 
 ### Main features
 - **Login** and **Signup**
