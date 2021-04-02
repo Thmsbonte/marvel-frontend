@@ -7,7 +7,7 @@ import Pagging from "../../components/pagging/pagging";
 import PaggingLimit from "../../components/paggingLimit/paggingLimit";
 import ResponsiveMenu from "../../components/responsiveMenu/responsiveMenu";
 
-const Comics = ({ search, responsiveMenu, setResponsiveMenu }) => {
+const Comics = ({ search, responsiveMenu, setResponsiveMenu, setSearch }) => {
   // States initialization
   const [comicsData, setComicsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -87,6 +87,7 @@ const Comics = ({ search, responsiveMenu, setResponsiveMenu }) => {
     <ResponsiveMenu
       responsiveMenu={responsiveMenu}
       setResponsiveMenu={setResponsiveMenu}
+      setSearch={setSearch}
     />
   );
 };

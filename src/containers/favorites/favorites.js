@@ -3,7 +3,12 @@ import CharacterCard from "../../components/characterCard/characterCard";
 import ComicCard from "../../components/comicCard/comicCard";
 import ResponsiveMenu from "../../components/responsiveMenu/responsiveMenu";
 
-const Favorites = ({ search, responsiveMenu, setResponsiveMenu }) => {
+const Favorites = ({
+  search,
+  responsiveMenu,
+  setResponsiveMenu,
+  setSearch,
+}) => {
   // Get data stored in local storage
   const favCharacters =
     JSON.parse(window.localStorage.getItem("favCharacters")) || [];
@@ -56,6 +61,7 @@ const Favorites = ({ search, responsiveMenu, setResponsiveMenu }) => {
     <ResponsiveMenu
       responsiveMenu={responsiveMenu}
       setResponsiveMenu={setResponsiveMenu}
+      setSearch={setSearch}
     />
   );
 };

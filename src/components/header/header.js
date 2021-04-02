@@ -74,9 +74,30 @@ const Header = ({
             <div className="header-right">
               <div className="header-menu">
                 <nav>
-                  <Link to="/characters">CHARACTERS</Link>
-                  <Link to="/comics">COMICS</Link>
-                  <Link to="/favorites">FAVORITES</Link>
+                  <Link
+                    to="/characters"
+                    onClick={() => {
+                      setSearch("");
+                    }}
+                  >
+                    CHARACTERS
+                  </Link>
+                  <Link
+                    to="/comics"
+                    onClick={() => {
+                      setSearch("");
+                    }}
+                  >
+                    COMICS
+                  </Link>
+                  <Link
+                    to="/favorites"
+                    onClick={() => {
+                      setSearch("");
+                    }}
+                  >
+                    FAVORITES
+                  </Link>
                 </nav>
               </div>
               {/* If user is connected display of a logout button */}

@@ -64,6 +64,7 @@ const App = () => {
         <Route path="/comics">
           <Comics
             search={search}
+            setSearch={setSearch}
             responsiveMenu={responsiveMenu}
             setResponsiveMenu={setResponsiveMenu}
           />
@@ -87,6 +88,7 @@ const App = () => {
         <Route path="/">
           <Characters
             search={search}
+            setSearch={setSearch}
             responsiveMenu={responsiveMenu}
             setResponsiveMenu={setResponsiveMenu}
           />

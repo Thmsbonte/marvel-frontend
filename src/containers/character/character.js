@@ -7,12 +7,19 @@ import ComicCard from "../../components/comicCard/comicCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ResponsiveMenu from "../../components/responsiveMenu/responsiveMenu";
 
-const Character = ({ search, responsiveMenu, setResponsiveMenu }) => {
+const Character = ({
+  search,
+  responsiveMenu,
+  setResponsiveMenu,
+  setSearch,
+}) => {
   // States initialization
   const [isLoading, setIsLoading] = useState(true);
   const [comicsRelated, setComicsRelated] = useState([]);
 
   const { character_id } = useParams();
+
+  let regex = new RegExp(search, "i");
 
   // At the opening of the page, one data request
   useEffect(() => {
@@ -73,9 +80,11 @@ const Character = ({ search, responsiveMenu, setResponsiveMenu }) => {
                   <div className="character-comics">
                     {comicsRelated.comics.map((item) => {
                       return (
-                        <div className="character-comic" key={item._id}>
-                          <ComicCard comicData={item} />
-                        </div>
+                        regex.test(item.title) && (
+                          <div className="character-comic" key={item._id}>
+                            <ComicCard comicData={item} />
+                          </div>
+                        )
                       );
                     })}
                   </div>
@@ -95,6 +104,7 @@ const Character = ({ search, responsiveMenu, setResponsiveMenu }) => {
     <ResponsiveMenu
       responsiveMenu={responsiveMenu}
       setResponsiveMenu={setResponsiveMenu}
+      setSearch={setSearch}
     />
   );
 };
