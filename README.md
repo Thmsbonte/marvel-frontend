@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-	<img width="800" src="https://github.com/Thmsbonte/marvel-frontend/blob/main/preview/marvel-gif-preview-2.gif">
+	<img src="https://github.com/Thmsbonte/marvel-frontend/blob/main/preview/marvel-gif-preview-2.gif">
 </p>
 
 ## Overview
