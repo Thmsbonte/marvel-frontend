@@ -8,19 +8,16 @@
 
 ## Overview
 
-Website listing all Marvel characters and comics related, and allowing to search and to save favorite characters. Developed with Javascript - React. It contains the following pages : 
-- Home page (list of Marvel characters)
-- Character detail
-- Comics (list of Marvel comics)
-- Favorite
-**Available to test here** : https://thmsbonte-marvel.netlify.app/
-⚠️ The website depends on an API that provide the data and that may not be maintain. ⚠️ 
+Website listing all Marvel characters and comics related. Developed with Javascript - React.
 
 ### Main features
 - **Login** and **Signup**
 - **Search** with filters
 - **Save** favorite
 - **Responsive**
+
+**Available to test here** : https://thmsbonte-marvel.netlify.app/
+⚠️ The website depends on an API that provide the data and that may not be maintain. ⚠️ 
 
 ### Screenshots
 
