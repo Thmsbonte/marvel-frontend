@@ -17,7 +17,7 @@ Website listing all Marvel characters and comics related. Developed with Javascr
 - **Responsive**
 
 **Available to test here** : https://thmsbonte-marvel.netlify.app/
-⚠️ The website depends on an API that provide the data and that may not be maintain. ⚠️ 
+⚠️ The website depends on an API that provides the data and that may not be maintain. ⚠️ 
 
 ### Screenshots
 
