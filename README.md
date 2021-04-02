@@ -17,7 +17,7 @@ Website allowing to search in all Marvel characters and comics related. Develope
 - **Responsive**
 
 **Available to test here** : https://thmsbonte-marvel.netlify.app/
-⚠️ The website depends on an API that provides the data and that may not be available. ⚠️ 
+⚠️ The website depends on an API that provides the data and that may be not available. ⚠️ 
 
 ### Screenshots
 
