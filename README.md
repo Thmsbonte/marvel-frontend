@@ -33,7 +33,7 @@ Clone this repository :
 
 ```
 git clone https://github.com/Thmsbonte/marvel-frontend.git
-cd vinted-frontend
+cd marvel-frontend
 ```
 
 Install packages :
